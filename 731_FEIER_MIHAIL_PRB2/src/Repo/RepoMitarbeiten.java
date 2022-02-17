@@ -32,6 +32,7 @@ public class RepoMitarbeiten {
     }
     public void updateMitarbeiten()
     {
+
         System.out.println("update Mitarbeiten name: ");
         for (Mitarbeiten i : listMiterbaiten)
             if(i.getName().equals(sc.next())) {
@@ -42,11 +43,13 @@ public class RepoMitarbeiten {
             }
     }
 
-    public void deleteMitarbeiten(String name){
+    public void deleteMitarbeiten(){
         System.out.println("delete Mitarbeiten name: ");
-        for (Mitarbeiten i : listMiterbaiten)
+        List<Mitarbeiten> newlist = listMiterbaiten;
+        for (Mitarbeiten i : getListMiterbaiten())
             if(i.getName().equals(sc.next()))
-                listMiterbaiten.remove(i);
+                newlist.remove(i);
+        setListMiterbaiten(newlist);
     }
 
     @Override

@@ -37,6 +37,33 @@ public class Main {
         RepoTeam rb1 = new RepoTeam(listTeam);
 
         Scanner sc = new Scanner(System.in);
+
+
+        Mitarbeiten p4 = new Mitarbeiten("CCCC", 2000);
+       // rp1.addMitarbeiten();
+        //System.out.println(rp1.toString());
+        rp1.deleteMitarbeiten();
+        System.out.println(rp1.toString());
+        rp1.updateMitarbeiten();
+        rp1.toString();
+        rb1.addTeam(listMitarbeiten);
+        rb1.toString();
+        rb1.updateTeam(listMitarbeiten);
+        rb1.toString();
+        rb1.deleteTeam();
+        rb1.toString();
+        List<Team> newListTeam =  rb1.filter(p1);
+        System.out.println(newListTeam.toString());
+
+
+
         System.out.println(rb1.getListTeam());
+
+
+
+
+
     }
+
+
 }

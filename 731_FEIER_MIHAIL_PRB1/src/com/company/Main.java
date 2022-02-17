@@ -67,7 +67,7 @@ public class Main {
     //(anzahl_teilnehmer/max_anzahl_teilnehmer)*100
     public void statistic(List<Unternehmen> list, File file) {
         List<Unternehmen> newlist = list;
-
+        for()
         newlist.sort(new Comparator<Unternehmen>() {
             @Override
             public int compare(Unternehmen o1, Unternehmen o2) {

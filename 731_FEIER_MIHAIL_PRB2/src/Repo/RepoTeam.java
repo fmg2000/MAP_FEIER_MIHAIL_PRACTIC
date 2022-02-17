@@ -4,6 +4,7 @@ import Model.Mitarbeiten;
 import Model.Team;
 
 import javax.sound.midi.Soundbank;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,8 +25,13 @@ public class RepoTeam {
         this.listTeam = listTeam;
     }
 
-    public void addTeam(Team item)
+    public void addTeam(List<Mitarbeiten> mitarbeiten)
     {
+        System.out.println("Add Mitarbeiten\n  Adugati nume: ");
+        String name = sc.next();
+        System.out.println("add ProjectName");
+        String projectName = sc.next();
+        Team item = new Team(name,projectName,mitarbeiten);
         listTeam.add(item);
     }
     public void updateTeam(List<Mitarbeiten> mitarbeiten)
@@ -48,6 +54,15 @@ public class RepoTeam {
         for (Team i : listTeam)
             if(i.getProjectname().equals(sc.next()))
                 listTeam.remove(i);
+    }
+    public List<Team> filter(Mitarbeiten item)
+    {
+        List<Team> newList = new ArrayList<>();
+        for(Team i : listTeam)
+            if(i.getListMitarbeiten().contains(item))
+                newList.add(i);
+
+        return newList;
     }
 
     @Override
